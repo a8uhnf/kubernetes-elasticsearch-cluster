@@ -2,6 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: curator
+  namespace: kube-system
 spec:
   schedule: 1 0 * * *
   jobTemplate:

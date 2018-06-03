@@ -52,7 +52,7 @@ spec:
               resource: limits.cpu
         resources:
           limits:
-            cpu: 1
+            cpu: 0.5
         ports:
         - containerPort: 9200
           name: http
@@ -61,6 +61,7 @@ spec:
         livenessProbe:
           tcpSocket:
             port: transport
+          initialDelaySeconds: 30
         readinessProbe:
           httpGet:
             path: /_cluster/health
